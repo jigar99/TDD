@@ -8,14 +8,47 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var isTheme: Bool  = false
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            TabView {
+                HomeView()
+                    .tabItem {
+                        Label("Home", systemImage: "house")
+                    }
+                
+                SettingView()
+                    .tabItem {
+                        Label("Setting", systemImage: "person.crop.circle")
+                    }
+            }
         }
-        .padding()
+        
+    }
+}
+
+
+//
+struct HomeView: View {
+    @State var isTheme: Bool  = false
+    
+    var body: some View {
+        VStack {
+           
+        }
+        
+    }
+}
+
+struct SettingView: View {
+    @State var isTheme: Bool  = false
+    
+    var body: some View {
+        VStack {
+            
+        }
+        
     }
 }
 
