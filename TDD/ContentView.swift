@@ -11,20 +11,19 @@ struct ContentView: View {
     @State var isTheme: Bool  = false
     
     var body: some View {
-        VStack {
             TabView {
                 HomeView()
                     .tabItem {
                         Label("Home", systemImage: "house")
                     }
+                    .tag(0)
                 
                 SettingView()
                     .tabItem {
                         Label("Setting", systemImage: "person.crop.circle")
                     }
+                    .tag(1)
             }
-        }
-        
     }
 }
 
@@ -34,8 +33,23 @@ struct HomeView: View {
     @State var isTheme: Bool  = false
     
     var body: some View {
-        VStack {
-           
+        
+        NavigationStack {
+            VStack {
+                Section {
+                    List {
+                        Text("Demo")
+                        Text("Demo")
+                        Text("Demo")
+                    }
+                }
+                
+                Section{
+                    Text("Demo6")
+                }
+                
+            }
+            .navigationTitle("Home")
         }
         
     }
@@ -45,8 +59,15 @@ struct SettingView: View {
     @State var isTheme: Bool  = false
     
     var body: some View {
-        VStack {
-            
+       
+        NavigationStack {
+            Section {
+                List {
+                    Text("Demo")
+                    
+                }
+            }
+            .navigationTitle("Setting")
         }
         
     }
